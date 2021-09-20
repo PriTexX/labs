@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "../random.hpp"
-#include <algorithm>
-#include <set>
 using std::cout;
 using std::endl;
 using Random = effolkronium::random_static;
@@ -55,7 +53,7 @@ int task_4(int N){
         arr[i] = Random::get(1, 128);
     }
 
-    if (arr[N-1] > arr[N-2]) return N-1; // Если последний элемент массива больше, чем предпоследний, то он является последним локальным максимом
+    if (arr[N-1] > arr[N-2]) return N-1; // Если последний элемент массива больше, чем предпоследний, то он является последним локальным максимумом
 
     int index_of_local_max{0};
     if(arr[0]>arr[1]) index_of_local_max = 0;
