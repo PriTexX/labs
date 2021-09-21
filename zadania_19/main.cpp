@@ -34,7 +34,7 @@ void task_1(int N){
             i+=2;
         }
         else {
-
+            ++i;
         }
     }
     printArray(clearedArr);
