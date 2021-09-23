@@ -82,7 +82,7 @@ void task_2(int N, int L){
 
 void task_3(int N, int K){
     //    std::vector<int> arr{getArray(N, 1, 10)};
-    std::vector<int> arr{2,1,1,5,5,5,4,7,7,7,9,8};
+    std::vector<int> arr{2,1,1,5,5,5,4,7,7,7,8,8};
     std::vector<int> arrLen;
     std::vector<int> arrValues;
 
@@ -107,19 +107,23 @@ void task_3(int N, int K){
     printArray(arrValues);
 
 
-    std::vector<int> temp;
-    for(int i{N-1}; i>(N - arrLen.back() - 1); --i){
-        temp.push_back(arr[i]);
-    }
+    auto it_begin_end{arr.end() - arrLen.back()};
+    auto it_end_end{arr.end()};
 
-    int begin{0};
-    for (int i{0}; i<K-1; ++i){
-        begin += arrLen[i];
+    int sum{0};
+    for(int i{0}; i<K-1; ++i){
+        sum += arrLen[i];
     }
+    auto it_begin_K{arr.begin()+sum};
+    auto it_end_K{arr.begin()+sum+arrLen[K-1]};
 
-    for(int i{begin}, j{}, c{0}; i < begin + arrLen[K - 1]; ++i, ++c, ++j){
-
-    }
+    std::vector<int> newArr;
+    newArr.insert(newArr.begin(),arr.begin(), it_begin_K);
+    newArr.insert(newArr.end(), it_begin_end, it_end_end);
+    newArr.insert(newArr.end(), it_end_K, it_begin_end);
+    newArr.insert(newArr.end(), it_begin_K, it_end_K);
+    cout<<"Измененный массив - ";
+    printArray(newArr);
 }
 
 int main() {
@@ -127,7 +131,7 @@ int main() {
     cout<<"\n\n";
     task_2(12, 2);
     cout<<"\n\n";
-    task_3(12, 2);
+    task_3(12, 3);
     cout<<"\n\n";
 
     return 0;
