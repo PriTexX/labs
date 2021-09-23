@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../random.hpp"
+#include "coord.h"
 using Random = effolkronium::random_static;
 using std::cout;
 
@@ -126,12 +127,33 @@ void task_3(int N, int K){
     printArray(newArr);
 }
 
+void task_4(int N){
+    std::vector<Coords> arr;
+    for(int i{0}; i<N; ++i){
+        arr.emplace_back(Random::get(-5,10), Random::get(-10, 5));
+    }
+
+    Coords start_coords{0,0};
+    Coords longest_coords{0,0};
+    for(Coords coords:arr){
+        cout<<coords<<"   ";
+        if (coords.getQuarter()!=2) continue;
+        if (coords.getDistanceTo(start_coords) > longest_coords.getDistanceTo(start_coords)){
+            longest_coords = coords;
+        }
+    }
+    cout<<"\n";
+    cout<<longest_coords;
+}
+
 int main() {
     task_1(12);
     cout<<"\n\n";
     task_2(12, 2);
     cout<<"\n\n";
     task_3(12, 3);
+    cout<<"\n\n";
+    task_4(12);
     cout<<"\n\n";
 
     return 0;
