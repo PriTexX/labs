@@ -35,8 +35,11 @@ void task_1(int N){
     }
     arrLen.push_back(count);
     arrValues.push_back(arr[N-1]);
+    cout<<"Изначальный массив - ";
     printArray(arr);
+    cout<<"Массив длинн серий - ";
     printArray(arrLen);
+    cout<<"Массив значений элементов - ";
     printArray(arrValues);
 }
 
@@ -119,7 +122,7 @@ void task_3(int N, int K){
     auto it_end_K{arr.begin()+sum+arrLen[K-1]};
 
     std::vector<int> newArr;
-    newArr.insert(newArr.begin(),arr.begin(), it_begin_K);
+    newArr.insert(newArr.begin(), arr.begin(), it_begin_K);
     newArr.insert(newArr.end(), it_begin_end, it_end_end);
     newArr.insert(newArr.end(), it_end_K, it_begin_end);
     newArr.insert(newArr.end(), it_begin_K, it_end_K);
@@ -135,6 +138,7 @@ void task_4(int N){
 
     Coords start_coords{0,0};
     Coords longest_coords{0,0};
+    cout<<"Массив координат:  ";
     for(Coords coords:arr){
         cout<<coords<<"   ";
         if (coords.getQuarter()!=2) continue;
@@ -143,7 +147,37 @@ void task_4(int N){
         }
     }
     cout<<"\n";
-    cout<<longest_coords;
+    cout<<"Самые отдаленные координаты:  "<<longest_coords;
+}
+
+void task_5(int N){
+    std::vector<Coords> arr;
+    for(int i{0}; i<N; ++i){
+        arr.emplace_back(Random::get(-10,10), Random::get(-10, 10));
+    }
+    double max_perimeter{0.0};
+    Coords A;
+    Coords B;
+    Coords C;
+    cout<<"Массив координат:  ";
+    for(Coords coord:arr){cout<<coord<<"   ";}
+
+    for (int i{0}; i<N-2; ++i){
+        for (int j{i+1}; j<N-1; ++j){
+            for (int c{j+1}; c<N; ++c){
+                double perimeter{arr[i].getDistanceTo(arr[j]) + arr[j].getDistanceTo(arr[c]) + arr[c].getDistanceTo(arr[i])};
+                if (perimeter > max_perimeter){
+                    A = arr[i];
+                    B = arr[j];
+                    C = arr[c];
+                    max_perimeter = perimeter;
+                }
+            }
+        }
+    }
+    cout<<"\n";
+    cout<<"Максимальный периметр треугольника:  "<<max_perimeter<<"\n";
+    cout<<"Координаты вершин этого треугольника:  "<<A<<"  "<<B<<"  "<<C;
 }
 
 int main() {
@@ -154,6 +188,8 @@ int main() {
     task_3(12, 3);
     cout<<"\n\n";
     task_4(12);
+    cout<<"\n\n";
+    task_5(12);
     cout<<"\n\n";
 
     return 0;

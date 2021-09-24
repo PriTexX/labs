@@ -19,7 +19,10 @@ public:
             if(y>0){quarter = 4;}
             else{quarter = 3;}
         }
+        if(x==0 and y==0) quarter = 0;
     }
+    Coords(): x{0}, y{0}, quarter{0}
+    {}
     Coords(const Coords &other) = default;
 
     double getDistanceTo(const Coords &initial_coords) const{
