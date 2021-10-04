@@ -12,7 +12,7 @@ void printArray(std::vector<int>& array){
 }
 
 void printArray(std::list<int>& array){
-    for(double element: array) cout<<element<<" ";
+    for(int element: array) cout<<element<<" ";
     cout<<"\n";
 }
 
