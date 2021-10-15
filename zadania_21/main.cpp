@@ -35,7 +35,7 @@ void printMatrix(std::vector<std::vector<int>> &matrix){
 }
 
 void task_1(int N){
-    std::vector<std::vector<int>> matrix{getMatrix(N)};
+    std::vector<std::vector<int>> matrix{getMatrix(N,N,10,99)};
     printMatrix(matrix);
     std::vector<int> arr(N * N);
     int INT{N - 1};
@@ -142,7 +142,7 @@ int task_5(int M, int N){
 }
 
 int main() {
-    task_1(7);
+    task_1(11);
     cout<<"\n\n";
     task_2(5,6,2);
     cout<<"\n\n";

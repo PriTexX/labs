@@ -28,8 +28,8 @@ void task_1(int N){
     std::vector<int> arr1{getArray(N)};
     std::vector<int> arr2{getArray(N)};
     std::swap(arr1, arr2);
-    printArray(arr1);
     printArray(arr2);
+    printArray(arr1);
 }
 
 void task_2(int N){

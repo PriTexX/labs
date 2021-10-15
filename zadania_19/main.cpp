@@ -33,8 +33,8 @@ std::list<int> getList(int N, int from = 1, int to = 128){
 }
 
 void task_1(int N){
-    std::vector<int> arr{getArray(N)};
-//    std::vector<int> arr{5,2,3,1,7,7,8,9,34,34,12,78};
+//    std::vector<int> arr{getArray(N)};
+    std::vector<int> arr{1,1,1,1,1,1,1,1,1,1};
     std::vector<int> clearedArr;
 
     printArray(arr);
@@ -120,7 +120,7 @@ void task_5(int N){
 }
 
 int main() {
-    task_1(12);
+    task_1(10);
     cout<<"\n\n";
     task_2(12);
     cout<<"\n\n";

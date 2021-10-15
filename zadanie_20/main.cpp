@@ -18,7 +18,7 @@ std::vector<int> getArray(int N, int from = 1, int to = 128){
 
 void task_1(int N){
 //    std::vector<int> arr{getArray(N, 1, 10)};
-    std::vector<int> arr{1,1,1,5,5,6,4,3,7,7,8,8};
+    std::vector<int> arr{1,1,1,1,1,1,1,1,1,1,1,1};
     std::vector<int> arrLen;
     std::vector<int> arrValues;
 

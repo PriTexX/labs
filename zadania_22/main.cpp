@@ -76,7 +76,7 @@ void task_4(int M, int N){
     printMatrix(matrix);
 
     std::sort(matrix.begin(), matrix.end(), [](std::vector<int> &a, std::vector<int> &b){
-        return a[0]<b[0];
+        return a[0]>b[0];
     });
     printMatrix(matrix);
 }
@@ -109,7 +109,7 @@ int main() {
     cout<<"\n\n";
     task_3(4,4);
     cout<<"\n\n";
-    task_4(5,5);
+    task_4(10,10);
     cout<<"\n\n";
     task_5(5);
     cout<<"\n\n";
