@@ -1,0 +1,16 @@
+{
+  "name": "zadanie_26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "buildall": "electron-packager . myApp --all --electron-version=15.2.0 --out=dist --ignore=dist --prune"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.2.0",
+    "electron-packager": "^15.4.0"
+  }
+}
