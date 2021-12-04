@@ -62,7 +62,7 @@ int main() {
     cout<<"\n\n";
     task_2("abcdefg");
     cout<<"\n\n";
-    task_3("bfgHYfjElM"); //6
+    task_3("FjfjjfFFFFFFFjgfkgFFFF"); //6
     cout<<"\n\n";
     task_4('a', "bbbagggaj");
     cout<<"\n\n";
